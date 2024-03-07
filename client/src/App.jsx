@@ -9,6 +9,7 @@ import Register from './components/Register';
 import Login from './components/Login'
 import RecordDisplay from './components/RecordDisplay';
 import UpdateRecord from './components/UpdateRecord';
+import Profile from './components/Profile';
 
 
 function App() {
@@ -16,13 +17,14 @@ function App() {
   
   const user = useSelector((state) => state.user?.currentUser) ||"";
 
-  console.log(user)
+  
   return (
     <>
      <Navbar/>
      <Routes>
       <Route path="/"element={<Home/>}/>
       <Route path="/create" element={user ?<RecordForm/>:<Navigate to="/"/>}/>
+      <Route path="/profile" element={<Profile/>}/>
       <Route path="/records"element={user ? <RecordDisplay/>:<Navigate to="/"/>}/>
       <Route path="/register" element={<Register/>}/>
       <Route path="/login" element={<Login/>}/>

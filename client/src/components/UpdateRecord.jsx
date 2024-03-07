@@ -52,6 +52,10 @@ const UpdateRecord = () => {
         setFormData({...formData,[e.target.id]:e.target.value})
     }
 
+    const handleStatusChange = (e) => {
+      setFormData({ ...formData, status: e.target.value }); // Capture status change separately
+    };
+
     console.log(formData)
 
      console.log(updatesuccess)
@@ -173,7 +177,7 @@ const UpdateRecord = () => {
             fullWidth
             id="phoneNumber"
             label="Phone Number"
-            name="name"
+            name="phoneNumber"
             defaultValue={rec.phoneNumber}
             autoFocus
             onChange={handleChange}
@@ -183,13 +187,13 @@ const UpdateRecord = () => {
             <Grid item xs >
             <FormControl fullWidth margin="normal"
             >
-           <InputLabel required id="status-label">Status</InputLabel>
+           <InputLabel required id="status">Status</InputLabel>
             <Select
-              labelId="status-label"
+              labelId="status"
               id="status"
               
               value={rec.status}
-              onChange={handleChange}
+              onChange={handleStatusChange}
             >
               <MenuItem value="present">Present</MenuItem>
               <MenuItem value="absent">Absent</MenuItem>
