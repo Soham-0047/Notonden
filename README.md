@@ -11,6 +11,8 @@ https://notonden.netlify.app/
 ### Backend Link
 https://notonden.onrender.com
 
+### Video
+https://youtu.be/NFL9XEooGg0?si=MGuMu5iadSekDskN
 
 
 ### Frontend
