@@ -22,7 +22,9 @@ router.post("/",async(req,res) =>{
     }
 })
 
-router.put("/:id",verifytoken, async(req,res) =>{
+//update
+
+router.put("/update/:id",async(req,res) =>{
 
     try {
         
@@ -39,7 +41,7 @@ router.put("/:id",verifytoken, async(req,res) =>{
 
 
 
-router.delete("/:id",verifyTokenAndAuth,async(req,res) =>{
+router.delete("/delete/:id",async(req,res) =>{
 
     try {
         await Record.findByIdAndDelete(req.params.id)
@@ -66,7 +68,7 @@ router.get("/find/:id",async(req,res) =>{
     }
 })
 
-router.get("/",verifyTokenAndAuth,async(req,res) =>{
+router.get("/",async(req,res) =>{
 
     try {
         let records = await Record.find()

@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import {useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import { Divider, Stack } from '@mui/material';
 import { NavLink,Link, useNavigate } from 'react-router-dom';
 import { signOut } from '../redux/userRedux';
@@ -21,11 +21,13 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
 
+
+
 const Navbar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-    const { currentUser } = useSelector((state) => state.user) || {};
+    const dispatch = useDispatch()
+    const { currentUser } = useSelector((state) => state.user) || "";
 
     const navigate = useNavigate();
 
@@ -47,7 +49,7 @@ const Navbar = () => {
 
     const handleSignOut = async () => {
       try {
-        await fetch("/api/auth/signout");
+        await fetch("http://localhost:5000/api/auth/signout");
         dispatch(signOut());
         // toast.success("Successfully Signout", {
         //   position: "top-right",
@@ -73,7 +75,7 @@ const Navbar = () => {
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -84,7 +86,7 @@ const Navbar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            Notonden
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -137,7 +139,7 @@ const Navbar = () => {
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+           href="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -149,7 +151,8 @@ const Navbar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            Notonden
+           
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (

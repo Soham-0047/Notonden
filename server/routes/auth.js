@@ -79,7 +79,9 @@ router.post("/login",async(req,res)=>{
 
 })
 
-
+router.get("/signout",(req,res)=>{
+  res.clearCookie('access_token').status(200).json("Signout Success");
+})
 
 
 

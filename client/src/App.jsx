@@ -8,6 +8,7 @@ import RecordForm from './components/RecordForm';
 import Register from './components/Register';
 import Login from './components/Login'
 import RecordDisplay from './components/RecordDisplay';
+import UpdateRecord from './components/UpdateRecord';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
   
   const user = useSelector((state) => state.user?.currentUser) ||"";
 
+  console.log(user)
   return (
     <>
      <Navbar/>
@@ -24,6 +26,7 @@ function App() {
       <Route path="/records"element={user ? <RecordDisplay/>:<Navigate to="/"/>}/>
       <Route path="/register" element={<Register/>}/>
       <Route path="/login" element={<Login/>}/>
+      <Route path="/records/:id" element={user ? <UpdateRecord/> : <Navigate to="/"/>}/> 
 
      </Routes>
     </>
