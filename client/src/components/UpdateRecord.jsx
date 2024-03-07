@@ -46,8 +46,7 @@ const UpdateRecord = () => {
 
     const [rec,setRec] = useState({})
 
-    console.log(currentUser)
-
+ 
     const handleChange = (e) =>{
         setFormData({...formData,[e.target.id]:e.target.value})
     }
@@ -56,10 +55,8 @@ const UpdateRecord = () => {
       setFormData({ ...formData, status: e.target.value }); // Capture status change separately
     };
 
-    console.log(formData)
 
-     console.log(updatesuccess)
-     
+  
     const handleSubmit = async(e) =>{
         e.preventDefault();
 
@@ -67,7 +64,7 @@ const UpdateRecord = () => {
             
             dispatch(updateRecordStart())
 
-            const res = await fetch (`http://localhost:5000/api/records/update/${id}`, {
+            const res = await fetch (`https://notonden.onrender.com/api/records/update/${id}`, {
                 method:'PUT',
                 headers:{
                     'Content-Type':'application/json',
@@ -97,7 +94,7 @@ const UpdateRecord = () => {
 
         try {
           
-          const pres = await axios.get(`http://localhost:5000/api/records/find/${id}`)
+          const pres = await axios.get(`https://notonden.onrender.com/api/records/find/${id}`)
 
           
           setRec(pres.data)
@@ -110,7 +107,7 @@ const UpdateRecord = () => {
 
   
 
-    console.log(rec)
+    
 
    
 

@@ -30,7 +30,7 @@ const SingleRecord = ({item}) => {
         try {
          
     
-         const res=  await fetch(`http://localhost:5000/api/records/delete/${item._id}`, {
+         const res=  await fetch(`https://notonden.onrender.com/api/records/delete/${item._id}`, {
     
            method:'DELETE',
          })

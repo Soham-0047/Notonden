@@ -20,7 +20,7 @@ const RecordDisplay = () => {
 
       try {
         
-        const res= await axios.get("http://localhost:5000/api/records")
+        const res= await axios.get("https://notonden.onrender.com/api/records")
         setRec(res.data)
       } catch (error) {
         console.log(error)

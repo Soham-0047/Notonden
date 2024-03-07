@@ -49,7 +49,7 @@ const Navbar = () => {
 
     const handleSignOut = async () => {
       try {
-        await fetch("http://localhost:5000/api/auth/signout");
+        await fetch("https://notonden.onrender.com/api/auth/signout");
         dispatch(signOut());
         // toast.success("Successfully Signout", {
         //   position: "top-right",
